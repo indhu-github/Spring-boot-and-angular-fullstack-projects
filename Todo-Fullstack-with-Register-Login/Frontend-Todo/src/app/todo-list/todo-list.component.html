@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Todo List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of todos | async">
+          <td>{{todo.title}}</td>
+          <td>{{todo.description}}</td>
+          <td>
+            <button class="btn btn-danger" (click)="onDeleteTodo(todo.id)">Delete</button>
+            <button (click)="updateTodo(todo.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+            <button class="btn btn-info" style="margin-left: 10px" (click)="onGetDetails(todo.id)">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

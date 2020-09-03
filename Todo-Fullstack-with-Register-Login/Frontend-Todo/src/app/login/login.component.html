@@ -1,0 +1,24 @@
+<h2>Login</h2>
+<div>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" required [(ngModel)]="user.username" name="username"/>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" required [(ngModel)]="user.password" name="password"/>
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-primary">Login</button>
+      <a routerLink="/register" class="btn btn-link">Register</a>
+    </div>
+<h3 *ngIf="error" class="text-danger">Plz input correct credentials</h3>
+<!--<div class="modal-body" *ngIf="error">
+  <h5>Check once</h5>
+  <p *ngIf="error">This <a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
+  </div>
+  </form>
+</div>-->
